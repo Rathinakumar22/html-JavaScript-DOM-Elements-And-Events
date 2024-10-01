@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+<style>
+    body{
+        background-image:url(v.jpg) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .d1 {
+        border: 5px solid black;
+        padding: 10px;
+        margin: 100px auto;
+        width: 300px; 
+    }
+    p{
+        background-image: url(bg.jpg);
+    }
+    #res{
+        background-color: #555d8b75;  
+    }
+    .r{
+        padding: 15px;
+    }
+    select, input {
+        width: 50%;
+        padding: 2px;
+        border: 3px solid black;
+    }
+</style>
+<script>
+function convertCurrency() {
+    var amount = parseFloat(document.getElementById("amount").value);
+    var from = document.getElementById("from").value;
+    var to = document.getElementById("to").value;
+    var rate = {
+        "USD": 1,
+        "INR": 83.32,
+        "EUR": 0.92,
+        "QTR": 3.64
+    };
+    var answer = (amount * rate[to]) / rate[from];
+    document.getElementById("res").innerHTML = "Amount" + " " +  " = " + answer.toFixed(2) + " " + to;
+}
+</script>
+</head>
+<body>
+    <p></p>
+    <div class='d1'>
+        <h1 style="color: rgba(6, 6, 6, 0.779); text-align: center;">Currency Converter</h1>
+        <form>
+            <label style="color: #4b0dda;" for = "amount">Amount:</label>
+            <br><br>
+            <input type="text" id="amount" placeholder="Enter amount" onchange="convertCurrency()">
+            <br><br>
+            <label style="color: #4b0dda;"; for="from">From:</label>
+            <br><br>
+            <select id="from" onchange="convertCurrency()"> 
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+                <option value="QTR">QTR</option>
+            </select>
+            <br><br>
+            <label style=color:rgba(0, 0, 255, 0.627); for="to">To:</label>
+            <br><br>
+            <select id="to" onchange="convertCurrency()"> 
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+                <option value="QTR">QTR</option>
+            </select><br><br>
+            <div id="res" class="r" style="text-align: center;"></div>
+        </form>
+    </div>
+</body>
+</html>
