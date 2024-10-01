@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cake World</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.478);
+        }
+        .order{
+        position: absolute;
+        width: 300px;
+        padding: 12px 20px;
+        margin-left: 40%;
+        margin-top: 3%;
+        box-sizing: border-box;
+        border-width: 8px;
+        border-radius: 1px;
+        background-color:whitesmoke;
+        opacity: 60%;
+        height: 300px;
+        }
+        header {
+            text-align: center;
+            font-size: 20px;
+            background-color:#ff9999ef;
+            color: #fff;
+            padding: 2px;
+        }
+        .t {
+        display: flex;
+        justify-content: space-between;
+        margin-top:40px;
+        overflow: hidden;
+        }
+        .t1 img {
+        width:350px;
+        height:370px;
+        object-fit: cover;
+        opacity: 1;
+        }
+        button {background-color: #008bba60; border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        width: 250px;
+        cursor: pointer;
+        }
+
+    </style>
+    <script>
+        function billing(){
+            var a=parseInt(document.getElementById('bcake').value);
+            var b=parseInt(document.getElementById('dcake').value);
+            var c=parseInt(document.getElementById('pcake').value);
+            var d=parseInt(document.getElementById('ucake').value);
+            var price=a*200+b*250+c*300+d*400;
+            document.getElementById('result').innerHTML='Total Price='+price;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 style="color: black;font-size: xx-large;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Cake World</h1>
+    </header>
+    <div class="t">
+        <div class="t1" style="font-size: x-large;">
+            <img src="bf.jpg" alt="I1">
+            <div class="c">Black forest Cake-Rs200</div>
+        </div>
+        <div class="t1" style="font-size: x-large;">
+            <img src="wf.jpg" alt="I2">
+            <div class="c">White Cake-Rs250</div>
+        </div>
+        <div class="t1" style="font-size: x-large;">
+            <img src="cosc.jpg" alt="I3">
+            <div class="c">Cosco Cake-Rs300</div>
+        </div>
+        <div class="t1" style="font-size: x-large;">
+            <img src="rf.jpg" alt="I3">
+            <div class="c">Red Velvet Cake-Rs400</div>
+        </div>
+    </div>
+    <div class="order" >
+        <h2 align="center" style="font-size: x-large;"> Place your Order Here</h2>
+            <label for="bcake">Black Forest(Quantity):</label><br>
+            <input type="text" id="bcake" name="bcake" ><br><br>
+            <label for="dcake">White Forest(Quantity):</label><br>
+            <input type="text" id="dcake" name="dcake" ><br><br>
+            <label for="pcake">Cosco Cake(Quantity):</label><br>
+            <input type="text" id="pcake" name="pcake" ><br><br>
+            <label for="ucake">Red Velvet Cake(Quantity):</label><br>
+            <input type="text" id="ucake" name="ucake" ><br><br>
+            <button onclick="billing()">Place Order</button>
+            <hr>
+            <h2 align="center">Purchase Order Bill</h2>
+            <p align="center" id="result">Total Price</p>  
+        </form>
+    </div>
+</body>
+</html>
